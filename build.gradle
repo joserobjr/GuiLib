@@ -17,13 +17,14 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "1.0.7.2"
+version = "1.7.10.0"
 group= "com.mcf.davidee"
 archivesBaseName = "GuiLib"
 
 minecraft {
-    version = "1.7.2-10.12.2.1147"
+    version = "1.7.10-10.13.4.1558-1.7.10"
     runDir = "run"
+    mappings = "stable_12"
 }
 
 dependencies {
