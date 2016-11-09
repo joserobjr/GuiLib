@@ -38,7 +38,7 @@ public class ItemTooltip extends Widget {
 	private static String getUnknownName(ItemStack stack) {
 		Item item = stack.getItem();
 		if (item instanceof ItemBlock) {
-			Class<? extends Block> blockClass = ((ItemBlock)item).field_150939_a.getClass();
+			Class<? extends Block> blockClass = ((ItemBlock)item).blockInstance.getClass();
 			return NAME_MAP.containsKey(blockClass) ? NAME_MAP.get(blockClass) : "Unknown";
 		}
 		return "Unknown";
@@ -66,11 +66,11 @@ public class ItemTooltip extends Widget {
 					tooltips.set(i, EnumChatFormatting.GRAY.toString() + tooltips.get(i));
 			}
 			FontRenderer itemRenderer = stack.getItem().getFontRenderer(stack);
-			font = (itemRenderer == null) ? mc.fontRenderer : itemRenderer;
+			font = (itemRenderer == null) ? mc.fontRendererObj : itemRenderer;
 		}
 		else {
 			tooltips = Arrays.asList("Air");
-			font = mc.fontRenderer;
+			font = mc.fontRendererObj;
 		}
 		this.parent = parent;
 		this.width = getMaxStringWidth();

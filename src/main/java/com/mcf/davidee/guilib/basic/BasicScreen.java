@@ -82,7 +82,7 @@ public abstract class BasicScreen extends GuiScreen {
 	public void drawScreen(int mx, int my, float f) {
 		drawBackground();
 		List<Widget> overlays = new ArrayList<Widget>();
-		int scale = new ScaledResolution(mc.gameSettings, mc.displayWidth, mc.displayHeight).getScaleFactor();
+		int scale = new ScaledResolution(mc, mc.displayWidth, mc.displayHeight).getScaleFactor();
 		for (Container c : containers)
 			overlays.addAll(c.draw(mx, my, scale));
 		for (Widget w : overlays)
@@ -111,7 +111,7 @@ public abstract class BasicScreen extends GuiScreen {
 	}
 
 	@Override
-	protected void mouseMovedOrUp(int mx, int my, int code) {
+	protected void mouseReleased(int mx, int my, int code) {
 		if (code == 0){
 			for (Container c : containers)
 				c.mouseReleased(mx, my);

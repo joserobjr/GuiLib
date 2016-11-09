@@ -54,7 +54,7 @@ public abstract class TextField extends FocusableWidget {
 
 		int j = cursorPosition - charOffset;
 		int k = selectionEnd - charOffset;
-		String s = mc.fontRenderer.trimStringToWidth(text.substring(charOffset), getInternalWidth());
+		String s = mc.fontRendererObj.trimStringToWidth(text.substring(charOffset), getInternalWidth());
 		boolean flag = j >= 0 && j <= s.length();
 		boolean cursor = focused && this.cursorCounter / 6 % 2 == 0 && flag;
 		int l = getDrawX();
@@ -66,7 +66,7 @@ public abstract class TextField extends FocusableWidget {
 
 		if (s.length() > 0) {
 			String s1 = flag ? s.substring(0, j) : s;
-			j1 = mc.fontRenderer.drawStringWithShadow(s1, l, i1, color);
+			j1 = mc.fontRendererObj.drawStringWithShadow(s1, l, i1, color);
 		}
 
 		boolean flag2 = this.cursorPosition < text.length() || text.length() >= maxLength;
@@ -79,16 +79,16 @@ public abstract class TextField extends FocusableWidget {
 			--j1;
 		}
 		if (s.length() > 0 && flag && j < s.length())
-			mc.fontRenderer.drawStringWithShadow(s.substring(j), j1, i1, color);
+			mc.fontRendererObj.drawStringWithShadow(s.substring(j), j1, i1, color);
 		if (cursor) {
 			if (flag2)
-				Gui.drawRect(k1, i1 - 1, k1 + 1, i1 + 1 + mc.fontRenderer.FONT_HEIGHT, -3092272);
+				Gui.drawRect(k1, i1 - 1, k1 + 1, i1 + 1 + mc.fontRendererObj.FONT_HEIGHT, -3092272);
 			else
-				mc.fontRenderer.drawStringWithShadow("_", k1, i1, color);
+				mc.fontRendererObj.drawStringWithShadow("_", k1, i1, color);
 		}
 		if (k != j) {
-			int l1 = l + mc.fontRenderer.getStringWidth(s.substring(0, k));
-			drawCursorVertical(k1, i1 - 1, l1 - 1, i1 + 1 + mc.fontRenderer.FONT_HEIGHT);
+			int l1 = l + mc.fontRendererObj.getStringWidth(s.substring(0, k));
+			drawCursorVertical(k1, i1 - 1, l1 - 1, i1 + 1 + mc.fontRendererObj.FONT_HEIGHT);
 		}
 
 	}
@@ -131,9 +131,9 @@ public abstract class TextField extends FocusableWidget {
 		int pos = mx - x;
 		pos -= Math.abs(getInternalWidth() - width) / 2;
 
-		String s = mc.fontRenderer.trimStringToWidth(
+		String s = mc.fontRendererObj.trimStringToWidth(
 				text.substring(charOffset), getWidth());
-		setCursorPosition(mc.fontRenderer.trimStringToWidth(s, pos).length()
+		setCursorPosition(mc.fontRendererObj.trimStringToWidth(s, pos).length()
 				+ charOffset);
 	}
 
@@ -245,11 +245,11 @@ public abstract class TextField extends FocusableWidget {
 			charOffset = index;
 
 		int width = this.getInternalWidth();
-		String s = mc.fontRenderer.trimStringToWidth(text.substring(charOffset), width);
+		String s = mc.fontRendererObj.trimStringToWidth(text.substring(charOffset), width);
 		int pos = s.length() + charOffset;
 
 		if (index == charOffset)
-			charOffset -= mc.fontRenderer.trimStringToWidth(this.text, width, true).length();
+			charOffset -= mc.fontRendererObj.trimStringToWidth(this.text, width, true).length();
 		if (index > pos)
 			charOffset += index - 1;
 		else if (index <= charOffset)

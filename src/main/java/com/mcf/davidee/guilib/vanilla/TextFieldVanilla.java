@@ -77,7 +77,7 @@ public class TextFieldVanilla extends TextField {
 
 	public static class VanillaFilter implements CharacterFilter {
 		public String filter(String s) {
-			return ChatAllowedCharacters.filerAllowedCharacters(s);
+			return ChatAllowedCharacters.filterAllowedCharacters(s);
 		}
 
 		public boolean isAllowedCharacter(char c) {

@@ -29,7 +29,7 @@ public class SliderVanilla extends Slider {
 	@Override
 	public void handleClick(int mx, int my) {
 		super.handleClick(mx, my);
-		mc.getSoundHandler().playSound(PositionedSoundRecord.func_147674_a(new ResourceLocation("gui.button.press"), 1.0F));
+		mc.getSoundHandler().playSound(PositionedSoundRecord.createPositionedSoundRecord(new ResourceLocation("gui.button.press"), 1.0F));
 	}
 
 	@Override
@@ -45,7 +45,7 @@ public class SliderVanilla extends Slider {
 		drawTexturedModalRect(x + width / 2, y, 200 - width / 2, 46, width / 2, height);
 		drawTexturedModalRect(x + (int)(value * (float)(width - 8)), y, 0, 66, 4, 20);
 		drawTexturedModalRect(x + (int)(value * (float)(width - 8)) + 4, y, 196, 66, 4, 20);
-		drawCenteredString(mc.fontRenderer, format.format(this), x + width / 2, y + (height - 8) / 2, 
+		drawCenteredString(mc.fontRendererObj, format.format(this), x + width / 2, y + (height - 8) / 2,
 				(inBounds(mx,my)) ? 16777120 : 0xffffff);
 	}
 
