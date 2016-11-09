@@ -29,7 +29,7 @@ public class SliderVanilla extends Slider {
 	@Override
 	public void handleClick(int mx, int my) {
 		super.handleClick(mx, my);
-		mc.getSoundHandler().playSound(PositionedSoundRecord.createPositionedSoundRecord(new ResourceLocation("gui.button.press"), 1.0F));
+		mc.getSoundHandler().playSound(PositionedSoundRecord.create(new ResourceLocation("gui.button.press"), 1.0F));
 	}
 
 	@Override

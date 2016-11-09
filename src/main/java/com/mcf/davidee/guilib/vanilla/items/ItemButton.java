@@ -3,6 +3,7 @@ package com.mcf.davidee.guilib.vanilla.items;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.RenderHelper;
@@ -30,7 +31,7 @@ public class ItemButton extends Button implements Shiftable {
 
 	public static final int WIDTH = 18;
 	public static final int HEIGHT = 18;
-	public static final RenderItem itemRenderer = new RenderItem();
+	public static final RenderItem itemRenderer = Minecraft.getMinecraft().getRenderItem();
 
 	protected ItemStack item;
 	protected List<Widget> tooltip;
@@ -72,7 +73,7 @@ public class ItemButton extends Button implements Shiftable {
 			OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, 240, 240);
 			GL11.glEnable(GL12.GL_RESCALE_NORMAL);
 			itemRenderer.zLevel = this.zLevel;
-			itemRenderer.renderItemAndEffectIntoGUI(mc.fontRendererObj, mc.getTextureManager(), item, x + 1, y + 1);
+			itemRenderer.renderItemAndEffectIntoGUI(item, x + 1, y + 1);
 			itemRenderer.zLevel = 0;
 			GL11.glDisable(GL12.GL_RESCALE_NORMAL);
 			RenderHelper.disableStandardItemLighting();

@@ -38,7 +38,7 @@ public class ItemTooltip extends Widget {
 	private static String getUnknownName(ItemStack stack) {
 		Item item = stack.getItem();
 		if (item instanceof ItemBlock) {
-			Class<? extends Block> blockClass = ((ItemBlock)item).blockInstance.getClass();
+			Class<? extends Block> blockClass = ((ItemBlock)item).block.getClass();
 			return NAME_MAP.containsKey(blockClass) ? NAME_MAP.get(blockClass) : "Unknown";
 		}
 		return "Unknown";

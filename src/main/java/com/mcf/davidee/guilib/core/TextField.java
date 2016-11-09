@@ -3,6 +3,7 @@ package com.mcf.davidee.guilib.core;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.util.MathHelper;
 
 import org.lwjgl.opengl.GL11;
@@ -106,17 +107,18 @@ public abstract class TextField extends FocusableWidget {
 			y2 = temp;
 		}
 		
-		Tessellator tessellator = Tessellator.instance;
+		Tessellator tessellator = Tessellator.getInstance();
+		WorldRenderer renderer = tessellator.getWorldRenderer();
 		GL11.glColor4f(0.0F, 0.0F, 255.0F, 255.0F);
 		GL11.glDisable(GL11.GL_TEXTURE_2D);
 		GL11.glEnable(GL11.GL_COLOR_LOGIC_OP);
 		GL11.glLogicOp(GL11.GL_OR_REVERSE);
-		tessellator.startDrawingQuads();
-		tessellator.addVertex((double) x1, (double) y2, 0.0D);
-		tessellator.addVertex((double) x2, (double) y2, 0.0D);
-		tessellator.addVertex((double) x2, (double) y1, 0.0D);
-		tessellator.addVertex((double) x1, (double) y1, 0.0D);
-		tessellator.draw();
+		renderer.startDrawingQuads();
+		renderer.addVertex((double) x1, (double) y2, 0.0D);
+		renderer.addVertex((double) x2, (double) y2, 0.0D);
+		renderer.addVertex((double) x2, (double) y1, 0.0D);
+		renderer.addVertex((double) x1, (double) y1, 0.0D);
+		renderer.finishDrawing();
 		GL11.glDisable(GL11.GL_COLOR_LOGIC_OP);
 		GL11.glEnable(GL11.GL_TEXTURE_2D);
 	}

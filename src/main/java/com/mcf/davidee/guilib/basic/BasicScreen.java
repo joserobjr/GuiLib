@@ -1,5 +1,6 @@
 package com.mcf.davidee.guilib.basic;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -122,7 +123,7 @@ public abstract class BasicScreen extends GuiScreen {
 	 * See {@link GuiScreen#handleMouseInput} for more information about mx and my.
 	 */
 	@Override
-	public void handleMouseInput() {
+	public void handleMouseInput() throws IOException {
 		super.handleMouseInput();
 		int delta = Mouse.getEventDWheel();
 		if (delta != 0) {
