@@ -113,11 +113,11 @@ public abstract class TextField extends FocusableWidget {
 		GL11.glDisable(GL11.GL_TEXTURE_2D);
 		GL11.glEnable(GL11.GL_COLOR_LOGIC_OP);
 		GL11.glLogicOp(GL11.GL_OR_REVERSE);
-		renderer.startDrawingQuads();
-		renderer.addVertex((double) x1, (double) y2, 0.0D);
-		renderer.addVertex((double) x2, (double) y2, 0.0D);
-		renderer.addVertex((double) x2, (double) y1, 0.0D);
-		renderer.addVertex((double) x1, (double) y1, 0.0D);
+		renderer.begin(7, renderer.getVertexFormat());
+		renderer.pos((double) x1, (double) y2, 0.0D);
+		renderer.pos((double) x2, (double) y2, 0.0D);
+		renderer.pos((double) x2, (double) y1, 0.0D);
+		renderer.pos((double) x1, (double) y1, 0.0D);
 		renderer.finishDrawing();
 		GL11.glDisable(GL11.GL_COLOR_LOGIC_OP);
 		GL11.glEnable(GL11.GL_TEXTURE_2D);
