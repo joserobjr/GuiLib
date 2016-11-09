@@ -6,7 +6,14 @@
 .project
 .metadata
 bin/
+build/
+.gradle/
+gradle-wrapper.jar
 tmp/
+run/
+classes/
+.idea/
+*.ipr
 *.tmp
 *.bak
 *.swp
