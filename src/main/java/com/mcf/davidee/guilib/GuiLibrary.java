@@ -7,7 +7,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 import java.util.Arrays;
 
-@Mod(modid = "guilib", name = "GUI Library", version = "1.8.9.0")
+@Mod(modid = "guilib", name = "GUI Library", version = "1.9.0.0")
 public class GuiLibrary {
 
 

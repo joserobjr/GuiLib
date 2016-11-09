@@ -1,7 +1,8 @@
 package com.mcf.davidee.guilib.vanilla;
 
 import net.minecraft.client.audio.PositionedSoundRecord;
-import net.minecraft.util.MathHelper;
+import net.minecraft.init.SoundEvents;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
@@ -29,7 +30,7 @@ public class SliderVanilla extends Slider {
 	@Override
 	public void handleClick(int mx, int my) {
 		super.handleClick(mx, my);
-		mc.getSoundHandler().playSound(PositionedSoundRecord.create(new ResourceLocation("gui.button.press"), 1.0F));
+		mc.getSoundHandler().playSound(PositionedSoundRecord.getMasterRecord(SoundEvents.UI_BUTTON_CLICK, 1.0F));
 	}
 
 	@Override

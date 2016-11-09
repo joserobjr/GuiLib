@@ -1,6 +1,7 @@
 package com.mcf.davidee.guilib.vanilla;
 
 import net.minecraft.client.audio.PositionedSoundRecord;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
@@ -63,7 +64,7 @@ public class ButtonVanilla extends Button {
 	}
 	
 	public void handleClick(int mx, int my) {
-		mc.getSoundHandler().playSound(PositionedSoundRecord.create(new ResourceLocation("gui.button.press"), 1.0F));
+		mc.getSoundHandler().playSound(PositionedSoundRecord.getMasterRecord(SoundEvents.UI_BUTTON_CLICK, 1.0F));
 		super.handleClick(mx, my);
 	}
 	

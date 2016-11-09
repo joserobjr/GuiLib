@@ -14,7 +14,7 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.util.text.TextFormatting;
 
 import org.lwjgl.opengl.GL11;
 
@@ -63,7 +63,7 @@ public class ItemTooltip extends Widget {
 					name = name.replace("tile.null.name", getUnknownName(stack));
 				tooltips.set(0, stack.getRarity().rarityColor.toString() + name);
 				for (int i = 1; i < tooltips.size(); ++i)
-					tooltips.set(i, EnumChatFormatting.GRAY.toString() + tooltips.get(i));
+					tooltips.set(i, TextFormatting.GRAY.toString() + tooltips.get(i));
 			}
 			FontRenderer itemRenderer = stack.getItem().getFontRenderer(stack);
 			font = (itemRenderer == null) ? mc.fontRendererObj : itemRenderer;

@@ -1,6 +1,6 @@
 package com.mcf.davidee.guilib.vanilla.sliders;
 
-import net.minecraft.util.MathHelper;
+import net.minecraft.util.math.MathHelper;
 
 import com.mcf.davidee.guilib.core.Slider;
 import com.mcf.davidee.guilib.vanilla.SliderVanilla;

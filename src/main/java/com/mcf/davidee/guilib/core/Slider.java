@@ -1,6 +1,6 @@
 package com.mcf.davidee.guilib.core;
 
-import net.minecraft.util.MathHelper;
+import net.minecraft.util.math.MathHelper;
 
 /**
  * 
