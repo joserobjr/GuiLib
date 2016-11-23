@@ -20,7 +20,7 @@ archivesBaseName = "GuiLib"
 minecraft {
     version = "1.10.2-12.18.2.2123"
     runDir = "run"
-    mappings = 'snapshot_20161109'
+    mappings = 'stable_29'
 }
 
 dependencies {
